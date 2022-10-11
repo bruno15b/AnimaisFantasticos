@@ -1,0 +1,97 @@
+body {
+  background: #faf6ed;
+  color: #222;
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body,
+h1,
+h2,
+h3,
+dd,
+dt,
+dl,
+p,
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+nav,
+footer {
+  grid-column: 3/-1;
+}
+
+h1,
+h2 {
+  font: 400 6rem/1 Playfair Display SC;
+  grid-column: 1/4;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font: 1rem IBM Plex Mono, monospace;
+  text-transform: uppercase;
+  color: #e54;
+  margin-bottom: 16px;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  text-decoration: none;
+  font: 700 0.875rem IBM Plex Mono, monospace;
+  letter-spacing: 0.1rem;
+  color: inherit;
+}
+
+p {
+  font: 1rem/1.2 Helvetica, Arial;
+}
+
+.principal,
+.faq,
+.contatos {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 30px;
+}
+
+.galeria {
+  grid-column: 2/3;
+}
+
+.container-intro {
+  grid-column: 3/4;
+}
+
+dl {
+  grid-column: 2/-1;
+}
+
+.contatos img {
+  grid-column: 2/3;
+}
+
+.header-nav {
+  display: flex;
+  background: #fb5;
+  margin: 30px 0;
+}
+
+.header-nav a {
+  display: block;
+  padding: 20px;
+}
