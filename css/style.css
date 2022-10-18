@@ -225,6 +225,15 @@ footer {
   font: 700 1rem IBM Plex Mono, monospace;
 }
 
+@media (max-width: 1030px) {
+  .js .js-accordion dt.arrow-up::after {
+    transition: 0s;
+  }
+  .js .js-accordion dt.arrow-up:hover::after {
+    transform: rotateX(360deg);
+  }
+}
+
 @media (max-width: 800px) {
   body {
     grid-template-columns: 1fr;
