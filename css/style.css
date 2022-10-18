@@ -66,29 +66,14 @@ a {
   color: inherit;
 }
 
+a:hover {
+  background: rgb(199, 143, 58);
+}
+
 p,
 dd {
   font: 1rem/1.2 Helvetica, Arial;
   margin-bottom: 15px;
-}
-
-dd {
-  margin-left: 30px;
-}
-
-dt {
-  color: #e54;
-  font: 700 1rem IBM Plex Mono, monospace;
-  margin-bottom: 0.5rem;
-}
-
-dt::before {
-  content: "";
-  background: #fb5;
-  height: 10px;
-  width: 20px;
-  display: inline-block;
-  margin-right: 10px;
 }
 
 .header-nav {
@@ -137,7 +122,8 @@ dt::before {
   margin-bottom: 50px;
 }
 
-.js .js-tabcontent .container-intro {
+.js .js-tabcontent .container-intro,
+.js .js-accordion dd {
   display: none;
 }
 
@@ -161,15 +147,61 @@ dl {
   grid-column: 2/-1;
 }
 
-.contatos img {
-  grid-column: 2/3;
+dd {
+  margin-left: 30px;
 }
 
-footer {
-  background: #fb5;
-  padding: 20px;
-  margin: 30px 0;
+dt {
+  color: #e54;
   font: 700 1rem IBM Plex Mono, monospace;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding: 10px;
+}
+
+dt::before {
+  content: "";
+  background: #fb5;
+  height: 10px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+dt::after {
+  content: "⤵";
+  position: absolute;
+  display: inline-block;
+  right: 20px;
+}
+
+.js .js-accordion dt.arrow-up::after {
+  content: "⤴";
+  transition: 0.2s;
+}
+
+.js .js-accordion dt.arrow-up:hover::after {
+  transform: rotateX(180deg);
+}
+
+.js .js-accordion .ativo {
+  display: block !important;
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 100px;
+  }
+}
+
+.contatos img {
+  grid-column: 2/3;
 }
 
 .contatos li {
@@ -184,6 +216,13 @@ footer {
   width: 15px;
   display: inline-block;
   margin-right: 10px;
+}
+
+footer {
+  background: #fb5;
+  padding: 20px;
+  margin: 30px 0;
+  font: 700 1rem IBM Plex Mono, monospace;
 }
 
 @media (max-width: 800px) {
