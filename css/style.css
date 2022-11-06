@@ -122,12 +122,12 @@ dd {
   margin-bottom: 50px;
 }
 
-.js .js-tabcontent .container-intro,
-.js .js-accordion dd {
+.js [data-tab="content"] .container-intro,
+.js [data-anima="accordion"] dd {
   display: none;
 }
 
-.js .js-tabcontent .ativo {
+.js [data-tab="content"] .ativo {
   display: block !important;
   animation: show 0.5s forwards;
 }
@@ -175,16 +175,16 @@ dt::after {
   right: 20px;
 }
 
-.js .js-accordion dt.arrow-up::after {
+.js [data-anima="accordion"] dt.arrow-up::after {
   content: "⤴";
   transition: 0.2s;
 }
 
-.js .js-accordion dt.arrow-up:hover::after {
+.js [data-anima="accordion"] dt.arrow-up:hover::after {
   transform: rotateX(180deg);
 }
 
-.js .js-accordion .ativo {
+.js [data-anima="accordion"] .ativo {
   display: block !important;
   animation: slideDown 0.5s forwards;
 }
@@ -218,12 +218,12 @@ dt::after {
   margin-right: 10px;
 }
 
-.js .js-scroll {
+.js [data-anima="scroll"] {
   opacity: 0;
   transform: translate3d(-30px, 0, 0);
 }
 
-.js .js-scroll.ativo {
+.js [data-anima="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: 0.3s;
@@ -237,10 +237,10 @@ footer {
 }
 
 @media (max-width: 1030px) {
-  .js .js-accordion dt.arrow-up::after {
+  .js [data-anima="accordion"] dt.arrow-up::after {
     transition: 0s;
   }
-  .js .js-accordion dt.arrow-up:hover::after {
+  .js [data-anima="accordion"] dt.arrow-up:hover::after {
     transform: rotateX(360deg);
   }
 }
