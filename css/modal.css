@@ -1,0 +1,93 @@
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(155, 143, 143, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container.ativo {
+  display: flex;
+}
+
+.modal {
+  background: #faf6ed;
+  padding: 30px;
+  position: relative;
+  border: 10px solid #fb5;
+  box-shadow: 0 0 0 10px #faf6ed;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.fechar {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0 0 5px black;
+  cursor: pointer;
+  color: black;
+  background: #e54;
+  font: 700 1rem IBM Plex Mono, monospace;
+  line-height: 0;
+}
+
+.fechar:hover {
+  background: rgb(184, 75, 63);
+}
+
+.modal-container label {
+  font: 700 1rem IBM Plex Mono, monospace;
+}
+
+.modal-container input {
+  font: 700 1rem IBM Plex Mono, monospace;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  width: 250px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border: solid 1px black;
+}
+
+.modal-container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #fb5;
+  border: #e54 solid 0.2px;
+}
+
+.modal-container button[type="submit"] {
+  background: #e54;
+  font: 700 1rem IBM Plex Mono, monospace;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 25px;
+  line-height: 0;
+  border: 2px solid black;
+}
+
+.modal-container button[type="submit"]:hover {
+  background: rgb(184, 75, 63);
+}
+
+@media (max-width: 400px) {
+  .modal-container input {
+    width: 200px;
+  }
+}
