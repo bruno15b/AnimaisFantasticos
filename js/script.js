@@ -4,7 +4,9 @@ import initAcorrdion from "./modules/accordion-list.js";
 import initAnimaScroll from "./modules/anima-scroll.js";
 import InitModal from "./modules/modal.js";
 import initToolTip from "./modules/tooltip.js";
+import initDropDown from "./modules/drop-down.js";
 
+initDropDown();
 initToolTip();
 InitModal();
 initAnimaScroll();
