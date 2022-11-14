@@ -5,7 +5,9 @@ import initAnimaScroll from "./modules/anima-scroll.js";
 import InitModal from "./modules/modal.js";
 import initToolTip from "./modules/tooltip.js";
 import initDropDown from "./modules/drop-down.js";
+import initMenuMobile from "./modules/menu-mobile.js";
 
+initMenuMobile();
 initDropDown();
 initToolTip();
 InitModal();

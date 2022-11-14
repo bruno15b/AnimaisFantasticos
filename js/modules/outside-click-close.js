@@ -1,20 +1,31 @@
-export default function OutsideClickClose(element) {
+export default function OutsideClickClose(arrayElements, callback) {
   const eventStart = ["touchstart", "click"];
   const hmtl = document.documentElement;
   const outside = "data-outside";
-  if (!element.hasAttribute(outside, "")) {
-    eventStart.forEach((event) => {
-      hmtl.addEventListener(event, ClickClose);
-      element.setAttribute(outside, "");
-    });
-  }
-  function ClickClose(event) {
-    if (!element.contains(event.target)) {
-      element.removeAttribute(outside);
-      eventStart.forEach((event) => {
-        element.classList.remove("active");
-        hmtl.removeEventListener(event, ClickClose);
+
+  arrayElements.forEach((element) => {
+    if (!element.hasAttribute(outside, "")) {
+      eventStart.forEach((starter) => {
+        setTimeout(() => {
+          hmtl.addEventListener(starter, ClickClose);
+        });
       });
+      element.setAttribute(outside, "");
     }
+  });
+
+  function ClickClose(event) {
+    const verificador = arrayElements.some((element) => {
+      return element.contains(event.target);
+    });
+    arrayElements.forEach((element) => {
+      if (!verificador) {
+        element.removeAttribute(outside);
+        eventStart.forEach((event) => {
+          hmtl.removeEventListener(event, ClickClose);
+        });
+        callback();
+      }
+    });
   }
 }
