@@ -1,0 +1,36 @@
+.numeros-grid {
+  grid-column: 2/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.numeros-grid h3 {
+  font-family: "Playfair Display SC";
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.numeros-grid span {
+  font-family: "IBM plex Mono", monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e54;
+}
+
+@media (max-width: 800px) {
+  .numeros-grid {
+    grid-column: 1/-1;
+    text-align: center;
+    gap: 10px;
+  }
+  .numeros-grid h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .numeros-grid span {
+    font-family: "IBM plex Mono", monospace;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}

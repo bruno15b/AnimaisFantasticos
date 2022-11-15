@@ -45,7 +45,7 @@ h2 {
   margin-left: 20px;
 }
 
-h3 {
+.container-intro h3 {
   font: 700 1rem IBM Plex Mono, monospace;
   text-transform: uppercase;
   color: #e54;
@@ -53,7 +53,7 @@ h3 {
   letter-spacing: 0.1rem;
 }
 
-h3::before {
+.container-intro h3::before {
   content: "";
   background: #fb5;
   height: 10px;
@@ -92,7 +92,8 @@ dd {
 
 .animais,
 .faq,
-.contatos {
+.contatos,
+.numeros {
   grid-column: 2/4;
   display: grid;
   grid-template-columns: 90px 300px 1fr;
@@ -259,7 +260,8 @@ footer {
   }
   .animais,
   .faq,
-  .contatos {
+  .contatos,
+  .numeros {
     grid-column: 1/-1;
     grid-template-columns: 1fr 1fr;
     margin-left: 20px;
@@ -289,7 +291,8 @@ footer {
 @media (max-width: 600px) {
   .animais,
   .faq,
-  .contatos {
+  .contatos,
+  .numeros {
     margin-bottom: 30px;
     gap: 20px;
   }
