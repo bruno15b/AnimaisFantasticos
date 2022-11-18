@@ -6,11 +6,13 @@ import InitModal from "./modules/modal.js";
 import initToolTip from "./modules/tooltip.js";
 import initDropDown from "./modules/drop-down.js";
 import initMenuMobile from "./modules/menu-mobile.js";
-import initAnimaNumeros from "./modules/anima-numeros.js";
 import initFuncionamento from "./modules/funcionamento.js";
+import initAnimais from "./modules/fetch-animais.js";
+import initFetchBtc from "./modules/fetch-btc.js";
 
+initFetchBtc();
+initAnimais();
 initFuncionamento();
-initAnimaNumeros();
 initMenuMobile();
 initDropDown();
 initToolTip();
