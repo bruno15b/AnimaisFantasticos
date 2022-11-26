@@ -1,9 +1,7 @@
 export default function initAcorrdion() {
-  const accordionList = document.querySelectorAll(
-    '[data-anima="accordion"] dt'
-  );
+  const accordionList = document.querySelectorAll('[data-anima="accordion"] dt');
+
   if (accordionList.length) {
-    accordionList[0].nextElementSibling.classList.add("ativo");
     accordionList.forEach((item, index) => {
       if (index > 0) {
         item.classList.add("arrow-up");

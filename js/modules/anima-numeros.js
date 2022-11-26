@@ -16,8 +16,8 @@ export default function initAnimaNumeros() {
     });
   }
 
+  let observer;
   const observeTarget = document.querySelector(".numeros");
-  const observer = new MutationObserver(handleMutation);
 
   function handleMutation(mutation) {
     if (mutation[0].target.classList.contains("ativo")) {
@@ -25,5 +25,7 @@ export default function initAnimaNumeros() {
       animaNumeros();
     }
   }
+
+  observer = new MutationObserver(handleMutation);
   observer.observe(observeTarget, { attributes: true });
 }

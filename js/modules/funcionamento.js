@@ -8,11 +8,7 @@ export default function initFuncionamento() {
     const diaAgora = dataAgora.getDay();
     const horaAgora = dataAgora.getHours();
 
-    if (
-      diasSemana.includes(diaAgora) &&
-      horaAgora >= horarioSemana[0] &&
-      horaAgora <= horarioSemana[1]
-    ) {
+    if (diasSemana.includes(diaAgora) && horaAgora >= horarioSemana[0] && horaAgora <= horarioSemana[1]) {
       funcionamento.classList.add("aberto");
     }
   }
