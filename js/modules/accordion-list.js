@@ -1,6 +1,6 @@
 export default function initAcorrdion() {
   const accordionList = document.querySelectorAll('[data-anima="accordion"] dt');
-
+  accordionList[0].nextElementSibling.classList.add("ativo");
   if (accordionList.length) {
     accordionList.forEach((item, index) => {
       if (index > 0) {

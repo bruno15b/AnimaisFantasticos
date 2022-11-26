@@ -8,8 +8,8 @@ export default function initToolTip() {
   };
   const onMouseMove = {
     handleEvent(event) {
-      this.boxTollTip.style.top = `${event.pageY + 20} "px"`;
-      this.boxTollTip.style.left = `${event.pageX + 20} "px"`;
+      this.boxTollTip.style.top = `${event.pageY + 20}px`;
+      this.boxTollTip.style.left = `${event.pageX + 20}px`;
     },
   };
 
