@@ -1,19 +1,44 @@
-export default function initAcorrdion() {
-  const accordionList = document.querySelectorAll('[data-anima="accordion"] dt');
-  accordionList[0].nextElementSibling.classList.add("ativo");
-  if (accordionList.length) {
-    accordionList.forEach((item, index) => {
+export default class Accordion {
+  constructor(itens, classDd, classDdAfter) {
+    this.accordions = document.querySelectorAll(itens);
+    if (classDd === undefined) {
+      this.classDd = "ativo";
+    } else {
+      this.classDd = classDd;
+    }
+    if (classDdAfter === undefined) {
+      this.classDdAfter = "arrow-up";
+    } else {
+      this.classDdAfter = classDdAfter;
+    }
+
+    this.handleAccordion = this.handleAccordion.bind(this);
+  }
+
+  handleAccordion(event) {
+    const accordionTarget = event.currentTarget;
+    accordionTarget.nextElementSibling.classList.toggle(this.classDd);
+    if (accordionTarget.classList.contains(this.classDdAfter)) {
+      accordionTarget.classList.remove(this.classDdAfter);
+    } else {
+      accordionTarget.classList.add(this.classDdAfter);
+    }
+  }
+
+  addAccordionEvent() {
+    this.accordions.forEach((item, index) => {
+      item.addEventListener("click", this.handleAccordion);
       if (index > 0) {
-        item.classList.add("arrow-up");
+        item.classList.add(this.classDdAfter);
       }
-      item.addEventListener("click", () => {
-        item.nextElementSibling.classList.toggle("ativo");
-        if (item.classList.contains("arrow-up")) {
-          item.classList.remove("arrow-up");
-        } else {
-          item.classList.add("arrow-up");
-        }
-      });
     });
+  }
+
+  init() {
+    if (this.accordions.length) {
+      this.accordions[0].nextElementSibling.classList.add(this.classDd);
+      this.addAccordionEvent();
+    }
+    return this;
   }
 }
