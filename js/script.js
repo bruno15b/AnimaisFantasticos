@@ -9,6 +9,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initAnimais from "./modules/fetch-animais.js";
 import initFetchBtc from "./modules/fetch-btc.js";
+import initDebounce from "./modules/debounce.js";
 
 const scrollSuave = new ScrollSuave('[data-nav="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -31,6 +32,7 @@ animaScroll.init();
 initAnimais("./animaisapi.json", ".numeros-grid");
 initFetchBtc("https://blockchain.info/ticker", ".btc-preco");
 
+initDebounce();
 initFuncionamento();
 initMenuMobile();
 initDropDown();
