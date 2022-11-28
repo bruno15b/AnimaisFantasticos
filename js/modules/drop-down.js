@@ -1,19 +1,34 @@
 import OutsideClickClose from "./outside-click-close.js";
 
-export default function initDropDown() {
-  const dropDown = document.querySelectorAll("[data-dropdown]");
+export default class DropDown {
+  constructor(dropDown) {
+    this.dropDown = document.querySelectorAll(dropDown);
+  }
 
-  function dropDownClick(event) {
-    event.preventDefault();
-    this.classList.add("active");
-    OutsideClickClose([this], () => {
-      this.classList.remove("active");
+  static fechar(target) {
+    OutsideClickClose([target], () => {
+      target.classList.remove("active");
     });
   }
 
-  dropDown.forEach((item) => {
-    ["touchstart", "click"].forEach((eventStart) => {
-      item.addEventListener(eventStart, dropDownClick);
+  static dropDownClick(event) {
+    event.preventDefault();
+    event.currentTarget.classList.add("active");
+    DropDown.fechar(event.currentTarget);
+  }
+
+  addDropDown() {
+    this.dropDown.forEach((item) => {
+      ["touchstart", "click"].forEach((eventStart) => {
+        item.addEventListener(eventStart, DropDown.dropDownClick);
+      });
     });
-  });
+  }
+
+  init() {
+    if (this.dropDown.length) {
+      this.addDropDown();
+    }
+    return this;
+  }
 }
