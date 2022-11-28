@@ -3,7 +3,7 @@ import debounce from "./debounce.js";
 export default class AnimaScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
-    this.startHeight = window.innerHeight * 0.8;
+    this.startHeight = window.innerHeight * 0.6;
     this.class = "ativo";
     this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
