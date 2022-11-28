@@ -25,8 +25,9 @@ modal.init();
 const tooltip = new ToolTip("[data-tooltip]");
 tooltip.init();
 
-initFetchBtc();
-initAnimais();
+initAnimais("./animaisapi.json", ".numeros-grid");
+initFetchBtc("https://blockchain.info/ticker", ".btc-preco");
+
 initFuncionamento();
 initMenuMobile();
 initDropDown();
