@@ -298,7 +298,7 @@ footer {
   }
   .galeria-animais {
     grid-column: 1/-1;
-    height: 200px;
+    height: 300px;
   }
   .container-animais {
     grid-column: 1/-1;

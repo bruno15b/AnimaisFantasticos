@@ -42,6 +42,7 @@
   background: #e54;
   font: 700 1rem IBM Plex Mono, monospace;
   line-height: 0;
+  text-align: center;
 }
 
 .fechar:hover {
