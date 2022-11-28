@@ -1,7 +1,12 @@
 .tooltip {
   position: absolute;
-  background: white;
-  border: black 1px solid;
-  box-shadow: 0 0 0 10px yellow;
-  padding: 20px;
+  background: rgba(29, 28, 28, 0.575);
+  border: #fb5 2px solid;
+  box-shadow: 0 0 0 5px rgba(29, 28, 28, 0.575);
+  padding: 10px;
+  border-radius: 5px;
+  font: 700 0.75rem IBM Plex Mono, monospace;
+  color: white;
+  width: 150px;
+  box-sizing: border-box;
 }
