@@ -28,8 +28,9 @@ tooltip.init();
 const animaScroll = new AnimaScroll('[data-anima="scroll"]');
 animaScroll.init();
 
-initFetchBtc();
-initAnimais();
+initAnimais("./animaisapi.json", ".numeros-grid");
+initFetchBtc("https://blockchain.info/ticker", ".btc-preco");
+
 initFuncionamento();
 initMenuMobile();
 initDropDown();
