@@ -1,4 +1,4 @@
-import OutsideClickClose from "./outside-click-close.js";
+import outsideClickClose from "./outside-click-close.js";
 
 export default class DropDown {
   constructor(dropDown) {
@@ -6,7 +6,7 @@ export default class DropDown {
   }
 
   static fechar(target) {
-    OutsideClickClose([target], () => {
+    outsideClickClose([target], () => {
       target.classList.remove("active");
     });
   }

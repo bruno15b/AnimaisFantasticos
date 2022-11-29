@@ -1,4 +1,4 @@
-import OutsideClickClose from "./outside-click-close.js";
+import outsideClickClose from "./outside-click-close.js";
 
 export default class MenuMobile {
   constructor(menuButton, menuList) {
@@ -8,7 +8,7 @@ export default class MenuMobile {
   }
 
   static fechar(menuList, menuButton) {
-    OutsideClickClose([menuList, menuButton], () => {
+    outsideClickClose([menuList, menuButton], () => {
       menuList.classList.remove("active");
       menuButton.classList.remove("active");
     });
