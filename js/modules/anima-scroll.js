@@ -19,7 +19,6 @@ export default class AnimaScroll {
   }
 
   checkDistance() {
-    console.log("t6este");
     this.distance.forEach((item) => {
       if (window.pageYOffset > item.offSet) {
         item.element.classList.add(this.class);
