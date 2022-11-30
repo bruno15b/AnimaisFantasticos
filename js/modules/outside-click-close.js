@@ -1,15 +1,15 @@
-export default function OutsideClickClose(arrayElements, callback) {
+export default function outsideClickClose(arrayElements, callback) {
   const eventStart = ["touchstart", "click"];
   const hmtl = document.documentElement;
   const outside = "data-outside";
 
-  function ClickClose(event) {
+  function clickClose(event) {
     const verificador = arrayElements.some((element) => element.contains(event.target));
     arrayElements.forEach((element) => {
       if (!verificador) {
         element.removeAttribute(outside);
         eventStart.forEach(() => {
-          hmtl.removeEventListener(event, ClickClose);
+          hmtl.removeEventListener(event, clickClose);
         });
         callback();
       }
@@ -20,7 +20,7 @@ export default function OutsideClickClose(arrayElements, callback) {
     if (!element.hasAttribute(outside, "")) {
       eventStart.forEach((starter) => {
         setTimeout(() => {
-          hmtl.addEventListener(starter, ClickClose);
+          hmtl.addEventListener(starter, clickClose);
         });
       });
       element.setAttribute(outside, "");
